@@ -14,9 +14,13 @@ export default function KaydedilenlerListesi(props) {
           <span className="saved-movie">{movie.title}</span>
         </NavLink>
       ))}
-      <Link to="/">
+      <NavLink
+        exact
+        to="/"
+        className={(isActive) => (isActive ? "hide" : "home")}
+      >
         <button className="home-button">Anasayfa</button>
-      </Link>
+      </NavLink>
     </div>
   );
 }
