@@ -51,7 +51,12 @@ export default function Film(props) {
           </div>
         ))}
       </div>
-      <button className="save-button">Kaydet</button>
+      <button
+        className="save-button"
+        onClick={() => props.KaydedilenlerListesineEkle(movie)}
+      >
+        Kaydet
+      </button>
     </div>
   );
 }
