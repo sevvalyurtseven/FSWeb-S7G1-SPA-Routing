@@ -7,7 +7,10 @@ export default function KaydedilenlerListesi(props) {
     <div className="saved-list">
       <h3>Kaydedilen Filmler:</h3>
       {props.list.map((movie) => (
-        <NavLink to={`/filmler/${movie.id}`}>
+        <NavLink
+          to={`/filmler/${movie.id}`}
+          className={(isActive) => (isActive ? "saved-active" : "saved-movie")}
+        >
           <span className="saved-movie">{movie.title}</span>
         </NavLink>
       ))}
