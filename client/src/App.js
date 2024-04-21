@@ -27,7 +27,10 @@ export default function App() {
   }, []);
 
   const KaydedilenlerListesineEkle = (movie) => {
-    setSaved([...saved, movie]);
+    const film = saved.find((savedMovie) => savedMovie.id === movie.id);
+    if (!film) {
+      setSaved([...saved, movie]);
+    }
     // Burası esnek. Aynı filmin birden fazla kez "saved" e eklenmesini engelleyin
   };
 
