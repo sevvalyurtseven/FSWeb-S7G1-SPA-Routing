@@ -36,7 +36,7 @@ export default function App() {
 
   return (
     <div>
-      <KaydedilenlerListesi list={[saved]} />
+      <KaydedilenlerListesi list={saved} />
       <Switch>
         <Route path="/" exact>
           <FilmListesi movies={movieList} />
