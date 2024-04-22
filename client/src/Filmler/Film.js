@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import FilmCard from "./FilmCard";
 
 export default function Film(props) {
   const [movie, setMovie] = useState();
@@ -35,22 +36,7 @@ export default function Film(props) {
 
   return (
     <div className="save-wrapper">
-      <div className="movie-card">
-        <h2>{title}</h2>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
-        <h3>Actors</h3>
-
-        {stars.map((star) => (
-          <div key={star} className="movie-star">
-            {star}
-          </div>
-        ))}
-      </div>
+      <FilmCard movie={movie} />
       <button
         className="save-button"
         onClick={() => props.KaydedilenlerListesineEkle(movie)}

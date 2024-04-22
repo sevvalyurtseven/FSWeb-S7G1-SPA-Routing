@@ -2,19 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function FilmCard(props) {
-  const { title, director, metascore, id } = props.movie;
+  const { title, director, metascore, stars } = props.movie;
 
   return (
-    <Link to={`/filmler/${id}`}>
-      <div className="movie-card">
-        <h2>{title}</h2>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
+    <div className="movie-card">
+      <h2>{title}</h2>
+      <div className="movie-director">
+        Director: <em>{director}</em>
       </div>
-    </Link>
+      <div className="movie-metascore">
+        Metascore: <strong>{metascore}</strong>
+      </div>
+      {stars && (
+        <>
+          <h3>Actors</h3>
+          {stars.map((star) => (
+            <div key={star} className="movie-star">
+              {star}
+            </div>
+          ))}
+        </>
+      )}
+    </div>
   );
 }
