@@ -11,7 +11,7 @@ export default function KaydedilenlerListesi(props) {
           to={`/filmler/${movie.id}`}
           className={(isActive) => (isActive ? "saved-active" : "saved-movie")}
         >
-          <span className="saved-movie">{movie.title}</span>
+          {movie.title}
         </NavLink>
       ))}
       <NavLink

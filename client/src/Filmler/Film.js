@@ -32,8 +32,6 @@ export default function Film(props) {
     return <div>Film bilgisi yükleniyor...</div>;
   }
 
-  const { title, director, metascore, stars } = movie;
-
   return (
     <div className="save-wrapper">
       <FilmCard movie={movie} />
